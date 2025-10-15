@@ -1,0 +1,876 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>project3</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<style>
+  body{ 
+font-family: 'Arial', sans-serif;
+  }
+  .header{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 6px 5px rgba(0,0,0,0.1);
+  background-color: rgb(255, 255, 255);
+  color: black;
+  justify-content: space-between;
+padding: 10px 15px;
+margin:10px ;
+top: 0;
+  }
+  .header h1{
+color: rgb(162, 98, 222);
+margin-left: 30px;
+  }
+  .header a{ 
+  text-decoration: none;
+  color: black;
+margin-left: 10px;
+margin-right: 10px;
+  font-weight: 500;
+  transition: 0.3s;
+  display: flex;
+  align-items: center;
+  padding-left: 30px;
+  justify-content: space-between;
+  }
+  .header a:hover {
+  color: rgb(162, 98, 222);
+}
+
+.h{
+    padding: 18px;
+color: rgb(162, 98, 222);
+    gap: 20px;
+    padding-left: 130px;
+justify-content: space-between;
+display: flex;
+}
+
+.one {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 20px;
+        position: relative;
+        flex-direction: row-reverse;
+    }
+  
+    .text {
+        flex: 1;
+        max-width: 40%;
+        border: none;
+    }
+    
+    .text h1 {
+        font-size: 50px;
+        font-weight: bold;
+        color: rgb(150, 93, 203);
+        line-height: 1.1;
+        margin: 0 0 15px 0;
+    }
+    
+    .text p {
+        font-weight: bold;
+        color: black;
+        margin: 20px 0;
+    }
+    .text button {
+        background-color: rgb(125, 13, 231);
+        color: white;
+        padding: 10px 20px;
+        font-size: 16px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        transition: background-color 0.3s;
+    }
+    
+    .text button .arrow {
+        font-size: 25px;
+        transition: transform 0.3s;
+    }
+    
+    .text button:hover .arrow {
+        transform: translateX(5px);
+    }
+    
+    .imges {
+        width: 60%;
+        height: 400px;
+        position: relative;
+        overflow: visible;
+    }
+    .imges img {
+        position: absolute;
+        border-radius: 8px;
+        object-fit: cover;
+    }
+    
+    .img1 {
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+        z-index: 1;
+    }
+    
+    .img2 {
+        width: 35%;
+        height: auto;
+        top: 30%;
+        left: 70%;
+        transform: translate(-50%, -25%);
+        z-index: 2;
+        border-radius: 10px;
+    }
+    
+    .one1 {
+        position: absolute;
+        right: 20px;
+        top: 50%;
+        transform: translateY(-50%);
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+        font-size: 22px;
+        z-index: 5;
+    }
+    
+    .one1 a {
+        color: rgb(125, 13, 231);
+        text-decoration: none;
+        transition: transform 0.3s;
+    }
+    
+    .one1 a:hover {
+        transform: scale(1.2);
+    }   
+    .f{
+justify-content: center;
+text-align: center;
+color: #6a1b9a;
+    }
+.products {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+  width: 100%;
+  margin: 40px auto;
+  padding: 0 40px; 
+  box-sizing: border-box;
+}
+
+    .product {
+      background-color: #fff;
+      border: 3px solid #b39ddb;
+      border-radius: 12px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      padding: 15px;
+      text-align: center;
+      transition: 0.3s ease;
+      width: 100%;
+      max-width: 260px;
+    }
+
+    .product:hover {
+      transform: scale(1.08);
+      box-shadow: 0 8px 20px rgba(155, 89, 182, 0.3);
+    }
+.product img {
+   width: 100%;
+    height: 180px;
+     object-fit: cover;
+      border-radius: 10px;
+       border: 2px solid #d1c4e9;
+        margin-bottom: 10px; 
+      }
+    .product h3 {
+      color: #6a1b9a;
+      margin: 8px 0;
+      font-size: 18px;
+    }
+
+    .product p {
+      font-size: 14px;
+      color: #555;
+      margin: 6px 0;
+    }
+
+    .product .stars {
+      color: #ffb400;
+      margin: 10px 0;
+    }
+
+    .product button {
+      background-color: #9575cd;
+      border: none;
+      color: white;
+      padding: 10px 20px;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+    .product button:hover {
+      background-color: #7e57c2;
+    }
+ .about {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 40px; 
+  background-color: #fff;
+  padding: 40px 60px;
+  border-radius: 15px;
+  box-shadow: 0 0 15px rgba(180, 131, 255, 0.3);
+  font-family: "Poppins", sans-serif;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.images {
+  order: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.images img {
+  width: 120px;
+  height: 90px;
+  border-radius: 10px;
+  cursor: pointer;
+  background: linear-gradient(135deg, #c77dff, #9d4edd);
+  padding: 5px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.images img:hover {
+  transform: scale(1.08);
+  box-shadow: 0 0 10px rgba(157, 78, 221, 0.5);
+}
+
+.about-image {
+  order: 2;
+  flex: 1;
+  display: flex;
+  justify-content: center;
+}
+
+.about-image img {
+  width: 100%;
+  max-width: 600px;
+  height: 400px;
+  object-fit: cover;
+  border-radius: 12px;
+  border: 2px solid #b388ff;
+  box-shadow: 0 0 10px rgba(180, 131, 255, 0.3);
+}
+
+.text {
+  order: 3;
+  flex: 1;
+  max-width: 450px;
+  color: #4a148c;
+  font-size: 15px;
+  line-height: 1.6;
+  padding: 10px 20px;
+  box-shadow: none;
+}
+    .ff{
+justify-content: center;
+text-align: center;
+color: #6a1b9a;
+font-size: 60px;
+    }
+ .btn {
+  display: inline-block;
+  margin-top: 15px;
+  padding: 15px 35px;
+  font-size: 20px; 
+  background-color: #552b9c;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+.btn:hover {
+  background-color: #9d4edd;
+}
+
+.about-btn {
+  text-align: center;
+  margin-top: 30px;
+}
+.reviews {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  margin-top: 20px;
+gap: 20px;
+}
+
+.reviews .box {
+  background-color: #fff;
+  padding: 15px 20px;
+  border-radius: 12px;
+  box-shadow: 0 7px 10px rgba(0,0,0,0.1);
+  display: flex;
+  align-items: flex-start;
+  gap: 15px;
+}
+
+.reviews .box img {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.reviews .box .box-content {
+  display: flex;
+  flex-direction: column;
+}
+
+.reviews .box .box-content h3 {
+  margin: 0;
+  font-size: 18px;
+  color: #6a1b9a;
+}
+
+.reviews .box .box-content .stars {
+  margin: 5px 0;
+  color: #ffb400;
+  font-size: 16px;
+}
+
+.reviews .box .box-content p {
+  font-size: 14px;
+  color: #555;
+  margin-top: 5px;
+} 
+ .form-photo-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: stretch; 
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.form-photo-container .photo,
+.form-photo-container .form {
+    flex: 1;
+    max-width: 50%;
+    margin: 0; 
+    padding: 0;
+    box-sizing: border-box; 
+}
+.welcome {
+  font-size: 28px;
+  font-weight: bold;
+  margin-bottom: 25px;
+  color:#a462de;
+}
+.form-photo-container .photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 15px;
+    display: block;
+}
+ .form input {
+  width: 80%;
+  padding: 10px;
+  border-radius: 20px;
+  border: 1px solid #a462de;
+  margin-bottom: 15px;
+  outline: none;
+ }
+.form button {
+  background-color: #a462de;
+  color: #fff;
+  border: none;
+  padding: 10px 25px;
+  border-radius: 25px;
+  cursor: pointer;
+  transition: 0.3s;
+    width: 80%;
+}
+.form button:hover {
+  background-color: #8b4ec8;
+}
+.form-photo-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1000px; 
+    margin: 0 auto;
+    gap: 0;
+}
+.form i{
+  justify-content: center;
+align-items: center;
+}
+.footer {
+  background-color: #f4edff;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 20px;
+  padding: 40px 60px;
+  width: 100%;
+  box-sizing: border-box;
+}
+.last {
+  flex: 1 1 200px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+    .last h2 {
+      color: #8b4ec8;
+      margin-bottom: 15px;
+    }
+
+    .last p, .last i {
+      color: #484848;
+      margin-bottom: 8px;
+    }
+    .follow-icons {
+    display: flex;
+    gap: 15px; 
+    margin-top: 10px;
+}
+
+.follow-icons i {
+    font-size: 24px;
+    cursor: pointer;
+    color: #6a1b9a; 
+    transition: transform 0.3s, color 0.3s; 
+}
+
+.follow-icons i:hover {
+    transform: scale(1.2);
+    color: #a462de; 
+}
+
+    .footer .contact-item {
+        display: flex;
+        align-items: center;
+        margin: 8px 0;
+    }
+
+        .fff{
+justify-content: center;
+text-align: center;
+color: #6a1b9a;
+font-size: 60px;
+    }
+        .ffff{
+justify-content: center;
+text-align: center;
+color: #6a1b9a;
+font-size: 60px;
+    }
+    .footer .last-newsletter {
+          padding: 20px;
+    border-radius: 12px;
+        display: flex;
+    flex-direction: column;
+    gap: 10px;
+    width: 50px;
+}
+
+.footer .last-newsletter input {
+    padding: 12px;
+    border-radius: 8px;
+    border: 1px solid #b388ff;
+    outline: none;
+    font-size: 14px;
+}
+
+.footer .last-newsletter button {
+    padding: 12px;
+    border-radius: 8px;
+    border: none;
+    background-color: #6a1b9a;
+    color: #fff;
+    cursor: pointer;
+    font-size: 14px;
+    transition: 0.3s;
+}
+
+.footer .last-newsletter button:hover {
+    background-color: #a462de;
+}
+    .footer .contact-item {
+        display: flex;
+        align-items: center;
+        margin: 5px 0;
+        gap: 10px;
+    }
+    .footer.last.part{
+      align-items: center;
+    }
+.services {
+  text-align: center;
+  padding: 40px 20px;
+}
+
+.services-title {
+  font-size: 40px;
+  color: #6a1b9a;
+  margin-bottom: 30px;
+}
+.services-row {
+  display: flex;
+  justify-content: center; 
+  gap: 40px; 
+  flex-wrap: nowrap; 
+  align-items: flex-start;
+}
+
+.service {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 200px; 
+  text-align: center;
+  height: 180px;
+  padding: 10px;
+}
+
+
+.service i {
+  font-size: 50px;
+  color: #6a1b9a;
+  margin-bottom: 10px;
+}
+
+.service h3 {
+  font-size: 15px;
+  color: #6a1b9a;
+  margin: 0 0 5px 0;
+}
+
+.service p {
+  font-size: 14px;
+  color: #4a148c;
+}
+
+
+</style>
+<body>
+<div class="header">
+    <h1 class="logo">Shoe<span style="text-decoration: underline;">s</span></h1>
+<a href="#">Home</a>
+<a href="#">Products</a>
+<a href="#">About</a>
+<a href="#">Review</a>
+<a href="#">Services</a>
+<div class="h">
+<i class="fa-solid fa-heart"></i>
+<i class="fa-solid fa-cart-shopping"></i>
+<i class="fa-solid fa-user"></i>
+</div>
+</div>
+<div class="one">
+<div class="text">
+<h1>NIKE <br>Collection</h1>
+<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nobis nam explicabo error impedit quam nulla ipsam aliquid officia, ea vitae quae, numquam hic quos nisi cum ipsum repellat provident asperiores.Discover the latest NIKE shoes in our collection!</p>
+<button>Shop Now</button>
+</div>
+<div class="imges">
+    <img class="img1" src="./1.jpg">
+    <img class="img2" src="./33.png">
+    </div>
+</div>
+<div class="one1">
+            <a href="# ">
+                <i class="fa-brands fa-facebook "></i>
+            </a>
+            <a href="# ">
+                <i class="fa-brands fa-twitter "></i>
+            </a>
+            <a href="# ">
+                <i class="fa-brands fa-square-instagram "></i>
+            </a>
+            <a href="#"> <i class="fa-brands fa-linkedin"></i>
+            </a>
+        </div>
+            <h2 class="f">PRODUCTS</h2>
+<div class="products">
+      <div class="product">
+        <img src="./3.jpg">
+        <h3>NIKE</h3>
+        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Natus reiciendis quo consequatur velit ea praesentium voluptas nesciunt amet. Dignissimos vitae nemo ad fuga quisquam a reiciendis itaque officia voluptas enim?</p>
+        <p>$120.00</p>
+    <div class="stars">
+    <i class="fa-solid fa-star"></i>
+    <i class="fa-solid fa-star"></i>
+    <i class="fa-solid fa-star"></i>
+    <i class="fa-solid fa-star"></i>
+    <i class="fa-regular fa-star"></i>
+  </div>
+        <button>Add to Cart</button>
+      </div>
+      <div class="product">
+        <img src="./3.jpg">
+        <h3>NIKE</h3>
+                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Natus reiciendis quo consequatur velit ea praesentium voluptas nesciunt amet. Dignissimos vitae nemo ad fuga quisquam a reiciendis itaque officia voluptas enim?</p>
+        <p>$100.00</p>
+        <div class="stars">
+    <i class="fa-solid fa-star"></i>
+    <i class="fa-solid fa-star"></i>
+    <i class="fa-solid fa-star"></i>
+    <i class="fa-solid fa-star"></i>
+    <i class="fa-regular fa-star"></i>
+  </div>
+        <button>Add to Cart</button>
+      </div>
+      <div class="product">
+        <img src="./3.jpg">
+        <h3>NIKE</h3>
+        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Natus reiciendis quo consequatur velit ea praesentium voluptas nesciunt amet. Dignissimos vitae nemo ad fuga quisquam a reiciendis itaque officia voluptas enim?</p>
+        <p>$100.00</p>
+        <div class="stars">
+    <i class="fa-solid fa-star"></i>
+    <i class="fa-solid fa-star"></i>
+    <i class="fa-solid fa-star"></i>
+    <i class="fa-solid fa-star"></i>
+    <i class="fa-regular fa-star"></i>
+  </div>
+        <button>Add to Cart</button>
+      </div>
+      <div class="product">
+        <img src="./3.jpg">
+        <h3>NIKE</h3>
+                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Natus reiciendis quo consequatur velit ea praesentium voluptas nesciunt amet. Dignissimos vitae nemo ad fuga quisquam a reiciendis itaque officia voluptas enim?</p>
+        <p>$100.00</p>
+        <div class="stars">
+    <i class="fa-solid fa-star"></i>
+    <i class="fa-solid fa-star"></i>
+    <i class="fa-solid fa-star"></i>
+    <i class="fa-solid fa-star"></i>
+    <i class="fa-regular fa-star"></i>
+  </div>
+        <button>Add to Cart</button>
+      </div>
+      <div class="product">
+        <img src="./3.jpg">
+        <h3>NIKE</h3>
+                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Natus reiciendis quo consequatur velit ea praesentium voluptas nesciunt amet. Dignissimos vitae nemo ad fuga quisquam a reiciendis itaque officia voluptas enim?</p>
+        <p>$100.00</p>
+        <div class="stars">
+    <i class="fa-solid fa-star"></i>
+    <i class="fa-solid fa-star"></i>
+    <i class="fa-solid fa-star"></i>
+    <i class="fa-solid fa-star"></i>
+    <i class="fa-regular fa-star"></i>
+  </div>
+        <button>Add to Cart</button>
+      </div>
+      <div class="product">
+        <img src="./3.jpg">
+        <h3>NIKE</h3>
+                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Natus reiciendis quo consequatur velit ea praesentium voluptas nesciunt amet. Dignissimos vitae nemo ad fuga quisquam a reiciendis itaque officia voluptas enim?</p>
+        <p>$100.00</p>
+        <div class="stars">
+    <i class="fa-solid fa-star"></i>
+    <i class="fa-solid fa-star"></i>
+    <i class="fa-solid fa-star"></i>
+    <i class="fa-solid fa-star"></i>
+    <i class="fa-regular fa-star"></i>
+  </div>
+        <button>Add to Cart</button>
+      </div>
+      <div class="product">
+        <img src="./3.jpg">
+        <h3>NIKE</h3>
+                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Natus reiciendis quo consequatur velit ea praesentium voluptas nesciunt amet. Dignissimos vitae nemo ad fuga quisquam a reiciendis itaque officia voluptas enim?</p>
+        <p>$100.00</p>
+        <div class="stars">
+    <i class="fa-solid fa-star"></i>
+    <i class="fa-solid fa-star"></i>
+    <i class="fa-solid fa-star"></i>
+    <i class="fa-solid fa-star"></i>
+    <i class="fa-regular fa-star"></i>
+  </div>
+        <button>Add to Cart</button>
+      </div>
+      <div class="product">
+        <img src="./3.jpg">
+        <h3>NIKE</h3>
+                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Natus reiciendis quo consequatur velit ea praesentium voluptas nesciunt amet. Dignissimos vitae nemo ad fuga quisquam a reiciendis itaque officia voluptas enim?</p>
+        <p>$100.00</p>
+        <div class="stars">
+    <i class="fa-solid fa-star"></i>
+    <i class="fa-solid fa-star"></i>
+    <i class="fa-solid fa-star"></i>
+    <i class="fa-solid fa-star"></i>
+    <i class="fa-regular fa-star"></i>
+  </div>
+        <button>Add to Cart</button>
+      </div>
+    </div>
+</div>
+<h2 class="ff">About</h2>
+  <div class="about">
+            <div class="about-image">
+      <img src="./4.jpg">
+    </div>
+      <div class="images">
+        <img src="./4.jpg">
+        <img src="./4.jpg">
+        <img src="./4.jpg">
+        <img src="./4.jpg">
+      </div>
+    <div class="text">
+      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Temporibus, vero molestias animi at, debitis pariatur reiciendis ullam neque cumque aut sunt ea reprehenderit libero laboriosam praesentium ipsam nulla inventore eos!Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quam assumenda ut illo architecto cupiditate, error dolorem. Maiores repellendus error sint dolores et, culpa alias eos, dicta magnam molestiae nulla expedita.
+        Quas cumque unde nulla amet provident aliquam at vero, possimus quisquam facere mollitia.
+        Our Nike Collection focuses on comfort, style, and performance for every athlete.
+      </p>
+    </div>
+  </div>
+  <div class="about-btn">
+    <button class="btn">Shop Now</button>
+  </div>
+  <div class="review">
+  <h2 class="fff">Customer Review</h2>
+  <div class="reviews">
+    <div class="box">
+      <img src="./5.jpg">
+      <h3>Ranidi Lochana</h3>
+      <div class="stars">★★★★★</div>
+      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis, amet nesciunt voluptatem cum architecto ipsum vero nulla!</p>
+    </div>
+    <div class="box">
+      <img src="./5.jpg">
+      <h3>Sayuru Tharanga</h3>
+      <div class="stars">★★★★★</div>
+      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis, amet nesciunt voluptatem cum architecto ipsum vero nulla!</p>
+    </div>
+    <div class="box">
+      <img src="./5.jpg">
+      <h3>Senuda Dilwan</h3>
+      <div class="stars">★★★☆☆</div>
+      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis, amet nesciunt voluptatem cum architecto ipsum vero nulla!</p>
+    </div>
+    <div class="box">
+      <img src="./5.jpg">
+      <h3>Kaveesha Widurungi</h3>
+      <div class="stars">★★★★★</div>
+      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis, amet nesciunt voluptatem cum architecto ipsum vero nulla!</p>
+    </div>
+    <div class="box">
+      <img src="./5.jpg" alt="">
+      <h3>John Deo</h3>
+      <div class="stars">★★★★★</div>
+      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis, amet nesciunt voluptatem cum architecto ipsum vero nulla!</p>
+    </div>
+    <div class="box">
+      <img src="./5.jpg">
+      <h3>Charith Aruna</h3>
+      <div class="stars">★★★★★</div>
+      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis, amet nesciunt voluptatem cum architecto ipsum vero nulla!</p>
+    </div>
+  </div>
+  </div>
+<div class="services">
+  <h2 class="services-title">Our Services</h2>
+  <div class="services-row">
+    <div class="service">
+      <i class="fa-solid fa-truck-fast"></i>
+      <h3>Fast Delivery</h3>
+      <p>Lorem ipsum dolor sit amet.</p>
+    </div>
+    <div class="service">
+      <i class="fa-solid fa-rotate-right"></i>
+      <h3>10 Days Replacement</h3>
+      <p>Lorem ipsum dolor sit amet.</p>
+    </div>
+    <div class="service">
+      <i class="fa-solid fa-headset"></i>
+      <h3>24 x 7 Support</h3>
+      <p>Lorem ipsum dolor sit amet.</p>
+    </div>
+  </div>
+</div>
+<div class="photo">
+  <div class="form-photo-container">
+  <div class="photo">
+    <img src="./10.jpg" alt="Photo">
+  </div>
+  <div class="form">
+    <h1 class="welcome">Welcome Back!</h1>
+    <form>
+      <p>User Name:</p>
+      <input type="text" placeholder="User Name">
+      <br>
+      <p>Password:</p>
+      <input type="password" placeholder="Password">
+      <br>
+      <div class="foget">
+      <p>Forget password ?!</p>
+      <button type="submit">Log in</button>
+      </div>
+      <br><br>
+      <div class="i">
+      <i class="fa-brands fa-facebook"></i>
+      <i class="fa-brands fa-twitter"></i>
+      <i class="fa-brands fa-square-instagram"></i>
+      </div>
+    </form>
+  </div>
+</div>
+</div>
+    <div class="footer">
+      <div class="last">
+                <h2>contact</h2>
+<div class="contact-item">
+    <i class="fa-solid fa-house"></i>
+    <p>123/contact/srilanka</p>
+</div>
+
+<div class="contact-item" style="text-align: center;">
+    <i class="fa-solid fa-phone"></i>
+    <p>0101232345</p>
+</div>
+      </div>
+    <div class="last" style="text-align: center;" >
+            <h2>Get Help</h2>
+            <p>FAQ</p>
+            <p>Shipping</p>
+            <p>Returns</p>
+            <p>payment Options</p>
+        </div>
+        <div class="last" style="text-align: center;">
+            <h2>Our Stores</h2>
+            <p>Sri Lanka</p>
+            <p>Usa</p>
+            <p>India</p>
+            <p>Japan</p>
+        </div>
+        <div class="last">
+    <h2>Follow US</h2>
+    <div class="follow-icons">
+        <i class="fa-brands fa-facebook"></i>
+        <i class="fa-brands fa-twitter"></i>
+        <i class="fa-brands fa-square-instagram"></i>
+    </div>
+</div>
+        <div class="last last-newsletter" style="text-align: center;">
+    <h2>Newsletter</h2>
+    <input type="email" name="email" placeholder="Your email here">
+    <button>Subscribe</button>
+</div>
+</div>
+</body>
+</html>
